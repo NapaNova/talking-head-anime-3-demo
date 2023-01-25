@@ -1,29 +1,37 @@
-# Demo Code for "Talking Head(?) Anime from A Single Image 3: Now the Body Too"
+[原版英文README在此](README_Original.md)
 
-This repository contains demo programs for the [Talking Head(?) Anime from a Single Image 3: Now the Body Too](https://pkhungurn.github.io/talking-head-anime-3/index.html) project. As the name implies, the project allows you to animate anime characters, and you only need a single image of that character to do so. There are two demo programs:
+以下是中文翻译版本：
 
-* The ``manual_poser`` lets you manipulate a character's facial expression, head rotation, body rotation, and chest expansion due to breathing through a graphical user interface. 
-* ``ifacialmocap_puppeteer`` lets you transfer your facial motion to an anime character.
+# "Talking Head(?) Anime from A Single Image 3: Now the Body Too" 的示例代码
 
-## Try the Manual Poser on Google Colab
+本仓库包含了 [Talking Head(?) Anime from a Single Image 3: Now the Body Too](https://pkhungurn.github.io/talking-head-anime-3/index.html) 项目的示例程序。项目名称暗示，该项目允许您动画化动漫角色，您只需要该角色的单张图像即可。有两个示例程序：
 
-If you do not have the required hardware (discussed below) or do not want to download the code and set up an environment to run it, click [![this link](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pkhungurn/talking-head-anime-3-demo/blob/master/colab.ipynb) to try running the manual poser on [Google Colab](https://research.google.com/colaboratory/faq.html).
+* ``manual_poser`` 允许您通过图形用户界面操纵角色的面部表情、头部旋转、身体旋转和胸部扩张。
+* ``ifacialmocap_puppeteer`` 允许您将您的面部动作传递给动漫角色。
 
-## Hardware Requirements
+## 在 Google Colab 上尝试手动 poser
 
-Both programs require a recent and powerful Nvidia GPU to run. I could personally ran them at good speed with the Nvidia Titan RTX. However, I think recent high-end gaming GPUs such as the RTX 2080, the RTX 3080, or better would do just as well.
+如果您没有所需的硬件（在下面讨论）或不想下载代码并设置环境来运行它，请单击 [![this link](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pkhungurn/talking-head-anime-3-demo/blob/master/colab.ipynb) 在 [Google Colab](https://research.google.com/colaboratory/faq.html) 上尝试运行手动 poser。
 
-The `ifacialmocap_puppeteer` requires an iOS device that is capable of computing [blend shape parameters](https://developer.apple.com/documentation/arkit/arfaceanchor/2928251-blendshapes) from a video feed. This means that the device must be able to run iOS 11.0 or higher and must have a TrueDepth front-facing camera. (See [this page](https://developer.apple.com/documentation/arkit/content_anchors/tracking_and_visualizing_faces) for more info.) In other words, if you have the iPhone X or something better, you should be all set. Personally, I have used an iPhone 12 mini.
+## 硬件要求
 
-## Software Requirements
+这两个程序都需要一个最新的和强大的 Nvidia GPU 来运行。我个人可以用 Nvidia Titan RTX 运行它们。然而，我认为最近的高端游戏 GPU，如 RTX 2080、RTX 3080 或更好的 GPU 也能做到。
 
-### GPU Related Software
+`ifacialmocap_puppeteer` 需要一个能够从视频流计算 [blend shape parameters](https://developer.apple.com/documentation/arkit/arfaceanchor/2928251-blendshapes) 的 iOS 设备。这意味着该设备必须能够运行 iOS 11.0 或更高版本，并必须具有 TrueDepth 前置摄像头。（有关更多信息，请参阅 [此页面](https://developer.apple.com/documentation/arkit/content_anchors/tracking_and_visualizing_faces)。）换句话说，如果您有 iPhone X 或更好的手机，您就应该一切就绪。我个人使用的是 iPhone 12 mini。
 
-Please update your GPU's device driver and install the [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) that is compatible with your GPU and is newer than the version you will be installing in the next subsection.
+## 软件要求
 
-### Python Environment
+### GPU 相关软件
 
-Both ``manual_poser`` and ``ifacialmocap_puppeteer`` are available as desktop applications. To run them, you need to set up an environment for running programs written in the [Python](http://www.python.org) language. The environment needs to have the following software packages:
+请更新您 GPU 的设备驱动程序并安装与您的 GPU 兼容且比下一个子节中要安装的版本更新的 [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit)。
+
+### Python 环境
+
+``manual_poser`` 和 ``ifacialmocap_puppeteer`` 都可以作为桌面应用程序使用。要运行它们，您需要为运行用 [Python](http://www.python.org) 语言编写的程序设置环境。该环境需要具有以下软件包
+
+### Python 环境
+
+``manual_poser`` 和 ``ifacialmocap_puppeteer`` 都可以作为桌面应用程序使用。要运行它们，您需要为运行用 [Python](http://www.python.org) 语言编写的程序设置环境。该环境需要具有以下软件包:
 
 * Python >= 3.8
 * PyTorch >= 1.11.0 with CUDA support
@@ -31,7 +39,7 @@ Both ``manual_poser`` and ``ifacialmocap_puppeteer`` are available as desktop ap
 * wxPython >= 4.1.1
 * Matplotlib >= 3.5.1
 
-One way to do so is to install [Anaconda](https://www.anaconda.com/) and run the following commands in your shell:
+一种做法是安装 [Anaconda](https://www.anaconda.com/) 并在您的 shell 中运行以下命令:
 
 ```
 > conda create -n talking-head-anime-3-demo python=3.8
@@ -41,58 +49,65 @@ One way to do so is to install [Anaconda](https://www.anaconda.com/) and run the
 > pip install wxpython
 > conda install matplotlib
 ```
-
 #### Caveat 1: Do not use Python 3.10 on Windows
 
-As of June 2006, you cannot use [wxPython](https://www.wxpython.org/) with Python 3.10 on Windows. As a result, do not use Python 3.10 until [this bug](https://github.com/wxWidgets/Phoenix/issues/2024) is fixed. This means you should not set ``python=3.10`` in the first ``conda`` command in the listing above.
+同样，由于在 Windows 上无法使用 [wxPython](https://www.wxpython.org/)，因此不要使用 Python 3.10 直到 [此错误](https://github.com/wxWidgets/Phoenix/issues/2024) 被修复。这意味着您不应该在上面列表中的第一个 ``conda`` 命令中设置 ``python=3.10``。
 
 #### Caveat 2: Adjust versions of Python and CUDA Toolkit as needed
 
-The environment created by the commands above gives you Python version 3.8 and an installation of [PyTorch](http://pytorch.org) that was compiled with CUDA Toolkit version 11.3. This particular setup might not work in the future because you may find that this particular PyTorch package does not work with your new computer. The solution is to:
+上面的命令创建的环境给您 Python 3.8 版本和使用 CUDA Toolkit 11.3 编译的 PyTorch 版本。这种特定的设置可能在将来无法使用，因为您可能会发现该特定 PyTorch 包不适用于新电脑。解决方案是:
 
-1. Change the Python version in the first command to a recent one that works for your OS. (That is, do not use 3.10 if you are using Windows.)
-2. Change the version of CUDA toolkit in the third command to one that the PyTorch's website says is available. In particular, scroll to the "Install PyTorch" section and use the chooser there to pick the right command for your computer. Use that command to install PyTorch instead of the third command above.
+1. 在第一个命令中更改 Python 版本为适用于您的 OS 的最新版本。(即，如果您在 Windows 上使用，请不要使用 3.10。)
+2. 在第三个命令中更改 CUDA 工具套件版本为 PyTorch 网站上可用的版本。特别地，滚动到“安装 PyTorch”部分，使用那里的选择器选择适合您电脑的命令。替换上面第三个命令来安装 PyTorch。
 
 ![The command to install PyTorch](docs/pytorch-install-command.png "The command to install PyTorch")
 
 ### Jupyter Environment
 
-The ``manual_poser`` is also available as a [Jupyter Nootbook](http://jupyter.org). To run it on your local machines, you also need to install:
-
-* Jupyter Notebook >= 7.3.4
-* IPywidgets >= 7.7.0
-
-In some case, you will also need to enable the ``widgetsnbextension`` as well. So, run
+``manual_poser`` 也可以作为 [Jupyter Nootbook](http://jupyter.org) 使用。要在本地机器上运行它，您还需要安装:
 
 ```
 > jupyter nbextension enable --py widgetsnbextension
 ```
 
-After installing the above two packages. Using Anaconda, I managed to do the above with the following commands:
+在安装上面的这两个包之后，使用 Anaconda，我使用以下命令完成了上述操作:
 
 ```
 > conda install -c conda-forge notebook
 > conda install -c conda-forge ipywidgets
 > jupyter nbextension enable --py widgetsnbextension
 ```
+### Anaconda 一次性下载并安装所有 Python 包
 
-### Automatic Environment Construction with Anaconda
-
-You can also use Anaconda to download and install all Python packages in one command. Open your shell, change the directory to where you clone the repository, and run:
+您还可以使用 Anaconda 一次性下载并安装所有 Python 包。打开你的 shell，将目录更改到克隆存储库的位置，并运行:
 
 ```
 > conda env create -f environment.yml
 ```
 
-This will create an environment called ``talking-head-anime-3-demo`` containing all the required Python packages.
+这将根据配置文件中的要求创建一个新的环境，并安装所需的所有 Python 包。
+
+如果您想要更新环境中的包，可以使用:
+
+```
+> conda env update -f environment.yml
+```
+
+如果您想要删除该环境，可以使用:
+
+```
+> conda remove --name talking-head-anime-3-demo --all
+```
+
+这将创建一个名为 ``talking-head-anime-3-demo`` 的环境，其中包含所有必需的 Python 包。
 
 ### iFacialMocap
 
-If you want to use ``ifacialmocap_puppeteer``, you will also need to an iOS software called [iFacialMocap](https://www.ifacialmocap.com/) (a 980 yen purchase in the App Store). You do not need to download the paired application this time. Your iOS and your computer must use the same network. For example, you may connect them to the same wireless router.
+如果您想使用 ``ifacialmocap_puppeteer``，您还需要一个名为 [iFacialMocap](https://www.ifacialmocap.com/) 的 iOS 软件 (在 App Store 中 980 日元购买)。这次您不需要下载配对应用。您的 iOS 和电脑必须使用相同的网络。例如，您可以将它们连接到同一无线路由器。
 
-## Download the Models
+## 下载模型
 
-Before running the programs, you need to download the model files from this [Dropbox link](https://www.dropbox.com/s/y7b8jl4n2euv8xe/talking-head-anime-3-models.zip?dl=0) and unzip it to the ``data/models`` folder under the repository's root directory. In the end, the data folder should look like:
+在运行程序之前，您需要从此 [Dropbox 链接](https://www.dropbox.com/s/y7b8jl4n2euv8xe/talking-head-anime-3-models.zip?dl=0) 下载模型文件，并将其解压到存储库根目录下的 ``data/models`` 文件夹中。最终，数据文件夹应该看起来像:
 
 ```
 + data
@@ -124,100 +139,91 @@ Before running the programs, you need to download the model files from this [Dro
       - two_algo_face_body_rotator.pt
 ```
 
-The model files are distributed with the 
-[Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode), which
-means that you can use them for commercial purposes. However, if you distribute them, you must, among other things, say 
-that I am the creator.
+模型文件使用 [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode) 发布，这意味着您可以将其用于商业目的。但是，如果您分发它们，您必须在其他方面说明我是创建者。
 
-## Running the `manual_poser` Desktop Application
+## 运行 `manual_poser` 桌面应用程序
 
-Open a shell. Change your working directory to the repository's root directory. Then, run:
+打开一个 shell。将工作目录更改为存储库的根目录。然后运行:
 
 ```
 > python tha3/app/manual_poser.py
 ```
 
-Note that before running the command above, you might have to activate the Python environment that contains the required
-packages. If you created an environment using Anaconda as was discussed above, you need to run
+请注意，在运行上面的命令之前，您可能需要激活包含所需软件包的 Python 环境。如果您使用 Anaconda 创建了环境，如上面所述，则需要运行
 
 ```
 > conda activate talking-head-anime-3-demo
 ```
+如果您尚未激活该环境。
 
-if you have not already activated the environment.
+## 选择要使用的系统变量
 
-### Choosing System Variant to Use
-
-As noted in the [project's write-up](http://pkhungurn.github.io/talking-head-anime-3/index.html), I created 4 variants of the neural network system. They are called ``standard_float``, ``separable_float``, ``standard_half``, and ``separable_half``. All of them have the same functionalities, but they differ in their sizes, RAM usage, speed, and accuracy. You can specify which variant that the ``manual_poser`` program uses through the ``--model`` command line option.
+正如 [项目报告](http://pkhungurn.github.io/talking-head-anime-3/index.html) 中所述，我创建了 4 种神经网络系统的变体。它们被称为 ``standard_float``、``separable_float``、``standard_half`` 和 ``separable_half``。它们都具有相同的功能，但它们的大小、RAM 使用、速度和准确性有所不同。您可以通过 ``--model`` 命令行选项指定 ``manual_poser`` 程序使用哪个变体。
 
 ```
 > python tha3/app/manual_poser --model <variant_name>
 ```
 
-where ``<variant_name>`` must be one of the 4 names above. If no variant is specified, the ``standard_float`` variant (which is the largest, slowest, and most accurate) will be used.
+其中 ``<variant_name>`` 必须是上述 4 个名称之一。如果未指定变体，则将使用 ``standard_float`` 变体 (这是最大、最慢和最准确的)。
 
-## Running the `manual_poser` Jupyter Notebook
+## 运行 `manual_poser` Jupyter Notebook
 
-Open a shell. Activate the environment. Change your working directory to the repository's root directory. Then, run:
+打开一个 shell。激活环境。将工作目录更改为存储库的根目录。然后运行:
 
 ```
 > jupyter notebook
 ```
 
-A browser window should open. In it, open `manual_poser.ipynb`. Once you have done so, you should see that it has two cells. Run the two cells in order. Then, scroll down to the end of the document, and you'll see the GUI there.
+浏览器窗口应该会打开。在其中，打开 `manual_poser.ipynb`。完成后，您应该会看到它有两个单元格。按顺序运行这两个单元格。然后滚动到文档的末尾，您将在那里看到 GUI。
 
-You can choose the system variant to use by changing the ``MODEL_NAME`` variable in the first cell. If you do, you will need to rerun both cells in order for the variant to be loaded and the GUI to be properly updated to use it.
+您可以通过更改第一个单元格中的 ``MODEL_NAME`` 变量来选择要使用的系统变体。如果您这样做，则需要重新运行两个单元格，以便加载变体并正确更新 GUI 以使用它。
 
-## Running the `ifacialmocap_poser`
+## 运行 `ifacialmocap_poser`
 
-First, run iFacialMocap on your iOS device. It should show you the device's IP address. Jot it down. Keep the app open.
-
-![IP address in iFacialMocap screen](docs/ifacialmocap_ip.jpg "IP address in iFacialMocap screen")
-
-Open a shell. Activate the Python environment. Change your working directory to the repository's root directory. Then, run:
+首先，在 iOS 设备上运行 iFacialMocap。它应该会显示设备的 IP 地址。记下它。保持应用程序打开
 
 ```
 > python tha3/app/ifacialmocap_puppeteer.py
 ```
 
-You will see a text box with label "Capture Device IP." Write the iOS device's IP address that you jotted down there.
+在 "Capture Device IP" 文本框中输入您之前记下的 iOS 设备的 IP 地址。
 
-![Write IP address of your iOS device in the 'Capture Device IP' text box.](docs/ifacialmocap_puppeteer_ip_address_box.png "Write IP address of your iOS device in the 'Capture Device IP' text box.")
+![在 'Capture Device IP' 文本框中输入 iOS 设备的 IP 地址。](docs/ifacialmocap_puppeteer_ip_address_box.png "在 'Capture Device IP' 文本框中输入 iOS 设备的 IP 地址。")
 
-Click the "START CAPTURE!" button to the right.
+点击右侧的 "START CAPTURE!" 按钮。
 
-![Click the 'START CAPTURE!' button.](docs/ifacialmocap_puppeteer_click_start_capture.png "Click the 'START CAPTURE!' button.")
+![点击 'START CAPTURE!' 按钮。](docs/ifacialmocap_puppeteer_click_start_capture.png "点击 'START CAPTURE!' 按钮。")
 
-If the programs are connected properly, you should see the numbers in the bottom part of the window change when you move your head.
+如果程序连接正常，当您移动头部时，应该能看到窗口底部的数字发生变化。
 
-![The numbers in the bottom part of the window should change when you move your head.](docs/ifacialmocap_puppeteer_numbers.png "The numbers in the bottom part of the window should change when you move your head.")
+![窗口底部的数字应该在您移动头部时发生变化。](docs/ifacialmocap_puppeteer_numbers.png "窗口底部的数字应该在您移动头部时发生变化。")
 
-Now, you can load an image of a character, and it should follow your facial movement.
+现在，您可以加载一个角色的图像，它应该遵循您的面部动作。
 
-## Contraints on Input Images
+## 输入图像的限制
 
-In order for the system to work well, the input image must obey the following constraints:
+为了使系统正常工作，输入图像必须遵循以下限制：
 
-* It should be of resolution 512 x 512. (If the demo programs receives an input image of any other size, they will resize the image to this resolution and also output at this resolution.)
-* It must have an alpha channel.
-* It must contain only one humanoid character.
-* The character should be standing upright and facing forward.
-* The character's hands should be below and far from the head.
-* The head of the character should roughly be contained in the 128 x 128 box in the middle of the top half of the image.
-* The alpha channels of all pixels that do not belong to the character (i.e., background pixels) must be 0.
+* 它应该是 512 x 512 的分辨率。（如果演示程序接收到其他大小的输入图像，它将将图像调整为此分辨率，并在此分辨率输出。）
+* 它必须具有alpha通道。
+* 它必须只包含一个人形角色。
+* 角色应该立着直立并面对前方。
+* 角色的手应该在头部下方并远离头部。
+* 角色的头部大致应该包含在图像上半部的中间128 x 128框中。
+* 不属于角色的所有像素的alpha通道（即背景像素）的alpha通道必须为0。
 
-![An example of an image that conforms to the above criteria](docs/input_spec.png "An example of an image that conforms to the above criteria")
+示例图像:
+![符合上述标准的图像示例](docs/input_spec.png "符合上述标准的图像示例")
 
-See the project's [write-up](http://pkhungurn.github.io/talking-head-anime-3/full.html#sec:problem-spec) for more details on the input image.
+更多关于输入图像的详细信息，请参阅项目的 [write-up](http://pkhungurn.github.io/talking-head-anime-3/full.html#sec:problem-spec)
 
-## Citation
+## 引用
 
-If your academic work benefits from the code in this repository, please cite the project's web page as follows:
+如果您的学术工作受此存储库中的代码的益处，请如下引用项目网页:
 
 > Pramook Khungurn. **Talking Head(?) Anime from a Single Image 3: Now the Body Too.** http://pkhungurn.github.io/talking-head-anime-3/, 2022. Accessed: YYYY-MM-DD.
 
-You can also used the following BibTex entry:
-
+您还可以使用以下 BibTex 条目:
 ```
 @misc{Khungurn:2022,
     author = {Pramook Khungurn},
