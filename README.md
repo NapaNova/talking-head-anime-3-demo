@@ -28,7 +28,7 @@ Please update your GPU's device driver and install the [CUDA Toolkit](https://de
 
 One way to do so is to install [Anaconda](https://www.anaconda.com/) and run the following commands in your anaconda prompt:
 
-![Use Anaconda Prompt](docs/AnacondaPrompt.png "Use Anaconda Prompt")
+![Use Anaconda Prompt](docs/AnacodaPrompt.png "Use Anaconda Prompt")
 
 
 ```

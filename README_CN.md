@@ -25,7 +25,7 @@ CUDA一定要装 11.7!!!!!!
 
 安装 [Anaconda](https://www.anaconda.com/) 然后再打开Anaconda Prompt运行下面的命令:
 
-![Use Anaconda Prompt](docs/AnacondaPrompt.png "Use Anaconda Prompt")
+![Use Anaconda Prompt](docs/AnacodaPrompt.png "Use Anaconda Prompt")
 
 
 ```
