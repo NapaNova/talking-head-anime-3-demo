@@ -23,7 +23,7 @@
 
 ### GPU 相关软件
 
-请更新您 GPU 的设备驱动程序并安装与您的 GPU 兼容且比下一个子节中要安装的版本更新的 [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit)。
+请更新您 GPU 的设备驱动程序并安装与您的 GPU 兼容且比下一个子节中要安装的版本更新的[CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit)。
 
 ### Python 环境
 
@@ -142,19 +142,16 @@
 模型文件使用 [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode) 发布，这意味着您可以将其用于商业目的。但是，如果您分发它们，您必须在其他方面说明我是创建者。
 
 ## 运行 `manual_poser` 桌面应用程序
-
-打开一个 shell。将工作目录更改为存储库的根目录。然后运行:
-
-```
-> python tha3/app/manual_poser.py
-```
-
 请注意，在运行上面的命令之前，您可能需要激活包含所需软件包的 Python 环境。如果您使用 Anaconda 创建了环境，如上面所述，则需要运行
+打开一个 AnacondaPrompt shell。将工作目录更改为存储库的根目录。然后运行:
 
 ```
 > conda activate talking-head-anime-3-demo
 ```
-如果您尚未激活该环境。
+
+```
+> python tha3/app/manual_poser.py
+```
 
 ## 选择要使用的系统变量
 

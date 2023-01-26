@@ -180,6 +180,15 @@ Open a shell. Activate the Python environment. Change your working directory to 
 > python tha3/app/ifacialmocap_puppeteer.py
 ```
 
+Note that before running the command above, you might have to activate the Python environment that contains the required
+packages. If you created an environment using Anaconda as was discussed above, you need to run
+
+```
+> conda activate talking-head-anime-3-demo
+```
+
+if you have not already activated the environment.
+
 You will see a text box with label "Capture Device IP." Write the iOS device's IP address that you jotted down there.
 
 ![Write IP address of your iOS device in the 'Capture Device IP' text box.](docs/ifacialmocap_puppeteer_ip_address_box.png "Write IP address of your iOS device in the 'Capture Device IP' text box.")

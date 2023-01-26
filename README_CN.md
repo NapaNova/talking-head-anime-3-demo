@@ -98,13 +98,25 @@ conda install -c conda-forge ipywidgets
 
 ## 运行 `manual_poser` 桌面应用程序
 
-打开一个 shell。将工作目录更改为存储库的根目录。然后运行:
+打开一个 AnacondaPrompt shell。将工作目录更改为存储库的根目录。然后运行:
+
+请注意，在运行上面的命令之前，您可能需要激活包含所需软件包的 Python 环境。如果您使用 Anaconda 创建了环境，如上面所述，则需要运行
+
+```
+> conda activate talking-head-anime-3-demo
+```
 
 ```
 > python tha3/app/manual_poser.py
 ```
 
 ## 运行 `ifacialmocap_poser`
+请注意，在运行上面的命令之前，您可能需要激活包含所需软件包的 Python 环境。如果您使用 Anaconda 创建了环境，如上面所述，则需要运行
+打开一个 AnacondaPrompt shell。将工作目录更改为存储库的根目录。然后运行:
+
+```
+> conda activate talking-head-anime-3-demo
+```
 
 首先，在 iOS 设备上运行 iFacialMocap。它应该会显示设备的 IP 地址。记下它。保持应用程序打开
 
