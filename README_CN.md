@@ -60,10 +60,6 @@ CUDA一定要装 11.7!!!!!!
 > conda install -c conda-forge ipywidgets
 ```
 
-```
-> jupyter nbextension enable --py widgetsnbextension
-```
-
 ## 下载模型
 
 在运行程序之前，您需要从此 [Dropbox 链接](https://www.dropbox.com/s/y7b8jl4n2euv8xe/talking-head-anime-3-models.zip?dl=0) 下载模型文件，并将其解压到存储库根目录下的 ``data/models`` 文件夹中。最终，数据文件夹应该看起来像:

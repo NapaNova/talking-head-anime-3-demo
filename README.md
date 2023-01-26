@@ -63,10 +63,6 @@ One way to do so is to install [Anaconda](https://www.anaconda.com/) and run the
 > conda install -c conda-forge ipywidgets
 ```
 
-```
-> jupyter nbextension enable --py widgetsnbextension
-```
-
 ## Download the Models
 
 Before running the programs, you need to download the model files from this [Dropbox link](https://www.dropbox.com/s/y7b8jl4n2euv8xe/talking-head-anime-3-models.zip?dl=0) and unzip it to the ``data/models`` folder under the repository's root directory. In the end, the data folder should look like:
