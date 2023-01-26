@@ -157,4 +157,12 @@ If you wish to use this as part of photoshop to match the spec, use StandardRule
 See the project's [write-up](http://pkhungurn.github.io/talking-head-anime-3/full.html#sec:problem-spec) for more details on the input image.
 
 
+## Credit:
+
+Thai: ประมุข ขันเงิน
+English: Pramook Khungurn
+Japanese:　プラムック・カンガーン
+
+The person mentioned above is the creator of this software package. We just updated the installation manaual readme in English and Chinese on 1/25/2023
+
 Original repo location: https://github.com/pkhungurn/talking-head-anime-3-demo
