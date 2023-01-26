@@ -31,21 +31,37 @@ One way to do so is to install [Anaconda](https://www.anaconda.com/) and run the
 ![Use Anaconda Prompt](docs/AnacodaPrompt.png "Use Anaconda Prompt")
 
 
-`conda create -n talking-head-anime-3-demo python=3.10`
+```
+conda create -n talking-head-anime-3-demo python=3.10
+```
 
-`conda activate talking-head-anime-3-demo`
+```
+conda activate talking-head-anime-3-demo
+```
 
-`conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia`
+```
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+```
 
-`conda install scipy`
+```
+conda install scipy
+```
 
-`pip install wxpython`
+```
+pip install wxpython
+```
 
-`conda install matplotlib`
+```
+conda install matplotlib
+```
 
-`conda install -c conda-forge notebook`
+```
+conda install -c conda-forge notebook
+```
 
-`conda install -c conda-forge ipywidgets`
+```
+conda install -c conda-forge ipywidgets
+```
 
 ## Download the Models
 
