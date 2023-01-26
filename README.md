@@ -1,6 +1,6 @@
 ## Installation guide in other language
 
-[前往中文安装教程](README.md)
+[前往中文安装教程](README_CN.md)
 
 ## Original guide and documentation
 
