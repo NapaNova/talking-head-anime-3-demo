@@ -153,4 +153,7 @@ conda install -c conda-forge ipywidgets
 示例图像:
 ![符合上述标准的图像示例](docs/input_spec.png "符合上述标准的图像示例")
 
+如果要用photoshop来对齐你的图请用这张StandardRule.png
+![如果要用photoshop来对齐你的图请用这张StandardRule.png](StandardRule.png "如果要用photoshop来对齐你的图请用这张StandardRule.png")
+
 更多关于输入图像的详细信息，请参阅项目的 [write-up](http://pkhungurn.github.io/talking-head-anime-3/full.html#sec:problem-spec)
