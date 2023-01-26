@@ -149,10 +149,12 @@ In order for the system to work well, the input image must obey the following co
 * The head of the character should roughly be contained in the 128 x 128 box in the middle of the top half of the image.
 * The alpha channels of all pixels that do not belong to the character (i.e., background pixels) must be 0.
 
-If you wish to use this as part of photoshop to match the spec, use StandardRule.png in the root folder
-
 ![An example of an image that conforms to the above criteria](docs/input_spec.png "An example of an image that conforms to the above criteria")
 
+If you wish to use this as part of photoshop to match the spec, use StandardRule.png in the root folder
 ![If you wish to use this as part of photoshop to match the spec, use StandardRule.png in the root folder](StandardRule.png "If you wish to use this as part of photoshop to match the spec, use StandardRule.png in the root folder")
 
 See the project's [write-up](http://pkhungurn.github.io/talking-head-anime-3/full.html#sec:problem-spec) for more details on the input image.
+
+
+Original repo location: https://github.com/pkhungurn/talking-head-anime-3-demo

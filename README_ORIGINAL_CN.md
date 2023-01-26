@@ -240,3 +240,5 @@ property of this invention.
 
 The code is released under the [MIT license](https://github.com/pkhungurn/talking-head-anime-2-demo/blob/master/LICENSE).
 The model is released under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode). Please see the README.md file in the ``data/images`` directory for the licenses for the images there.
+
+Original repo location: https://github.com/pkhungurn/talking-head-anime-3-demo
