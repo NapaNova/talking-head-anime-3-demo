@@ -45,6 +45,10 @@ CUDA一定要装 11.7!!!!!!
 ```
 
 ```
+> pip install wxpython
+```
+
+```
 > conda install matplotlib
 ```
 

@@ -48,6 +48,10 @@ One way to do so is to install [Anaconda](https://www.anaconda.com/) and run the
 ```
 
 ```
+> pip install wxpython
+```
+
+```
 > conda install matplotlib
 ```
 
